@@ -15,7 +15,7 @@ int PedestrianButton::getId()
 
 bool PedestrianButton::isPressed() 
 {   
-  bool pressed = analogRead(_inPort) > 0;
+  bool pressed = digitalRead(_inPort) == HIGH;
 
   if ( pressed ) 
   {

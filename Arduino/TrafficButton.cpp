@@ -22,7 +22,7 @@ int TrafficButton::getCount()
 
 bool TrafficButton::isPressed()
 {
-  bool pressed = analogRead(_inPort) > 0;
+  bool pressed = digitalRead(_inPort) == HIGH;
 
   if ( pressed )
   {

@@ -30,9 +30,6 @@ void setup() {
 }
 
 void loop() {
-  //tl[0]->testLight();
-  //wl[0]->testLight();
-  //pl[0]->testLight();
 }
 
 void serialEvent() {
