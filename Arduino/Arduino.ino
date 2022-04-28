@@ -8,28 +8,59 @@
 
 #define bitsPerSecond 9600
 
-PedestrianButton *pb[2];
+
+TrafficLight *tl[3];
+WarningLight *wl[3];
 PedestrianLight *pl[2];
 
 TrafficButton *tb[3];
-TrafficLight *tl[3];
-
-WarningLight *wl[2];
+PedestrianButton *pb[2];
 
 void setup() {
   // Setup serial
   Serial.begin(bitsPerSecond);
 
-  // Initiate the breadBoard 0
+  // Initiate the breadBoard ligths 0
   tl[0] = new TrafficLight(0, 22, 23, 24);
   wl[0] = new WarningLight(0, 25);
   pl[0] = new PedestrianLight(0, 26, 27);
-  tb[0] = new TrafficButton(0, A0);
-  pb[0] = new PedestrianButton(0, A1);
 
+  // Initiate the breadBoard ligths 1
+  tl[1] = new TrafficLight(1, 28, 29, 30);
+  wl[1] = new WarningLight(1, 31);
+  pl[1] = new PedestrianLight(1, 32, 33);
+  
+  // Initiate the breadBoard ligths 2
+  wl[2] = new WarningLight(2, 34);
+  tl[2] = new TrafficLight(2, 35, 36, 37);
+
+  // Initiate the breadBoard button 0
+  tb[0] = new TrafficButton(0, 13);
+  pb[0] = new PedestrianButton(0, 12);
+  
+  // Initiate the breadBoard button 0
+  tb[1] = new TrafficButton(1, 38);
+  pb[1] = new PedestrianButton(1, 39);
+  
+  // Initiate the breadBoard button 0
+  tb[2] = new TrafficButton(2, A0);
 }
 
-void loop() {
+void loop() {  
+  checkButtons();
+}
+
+void checkButtons()
+{
+  for( int i=0; i<3; i++ ) 
+  {
+    tb[i]->isPressed();
+  }
+
+  for( int i=1; i<2; i++) 
+  {
+    pb[i]->isPressed();
+  }
 }
 
 void serialEvent() {

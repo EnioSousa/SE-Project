@@ -23,18 +23,6 @@ class TrafficButton
     int getId();
 
     /**
-     * Get the current number of cars waiting
-     * 
-     * @return the number of cars waiting
-     */
-    int getCount();
-
-    /**
-     * Resets the number of cars wainting count
-     */
-    void reset();
-
-    /**
      * Check if the button is pressed, and if true, increases the number
      * of cars waiting
      * 
@@ -42,7 +30,8 @@ class TrafficButton
      */
     bool isPressed();
   private:
-    int _inPort, _id, _count;
+    int _inPort, _id;
+    bool _prevPressed;
     
     void statusUpdate(char actionStatus);
 };

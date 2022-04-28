@@ -6,6 +6,8 @@ WarningLight::WarningLight(int id, int port)
   _port = port;
 
   pinMode(port, OUTPUT);
+  
+  this->statusUpdate('O');
 }
 
 int WarningLight::getId()

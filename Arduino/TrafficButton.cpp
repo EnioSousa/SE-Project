@@ -7,7 +7,7 @@ TrafficButton::TrafficButton(int id, int inPort)
   _inPort = inPort;
   pinMode(inPort, INPUT);
 
-  _count = 0;
+  _prevPressed = false;
 }
 
 int TrafficButton::getId()
@@ -15,33 +15,27 @@ int TrafficButton::getId()
   return _id;
 }
 
-int TrafficButton::getCount()
-{
-  return _count;
-}
-
 bool TrafficButton::isPressed()
 {
   bool pressed = digitalRead(_inPort) == HIGH;
 
-  if ( pressed )
+  if ( pressed && !_prevPressed )
   {
-    _count++;
+    _prevPressed = true;
     this->statusUpdate('P');
     return true;
   }
 
-  else
+  else if ( !pressed )
   {
+    _prevPressed = false;
     return false;
   }
-}
-
-void TrafficButton::reset()
-{
-  _count = 0;
-
-  this->statusUpdate('R');
+  
+  else
+  { 
+    return false;
+  }
 }
 
 void TrafficButton::statusUpdate(char actionStatus)

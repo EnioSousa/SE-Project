@@ -30,6 +30,7 @@ class PedestrianButton
     bool isPressed();
   private:
     int _inPort, _id;
+    bool _prevPressed;
     
     void statusUpdate(char actionStatus);
 };

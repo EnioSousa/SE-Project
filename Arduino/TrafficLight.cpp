@@ -3,13 +3,15 @@
 TrafficLight::TrafficLight(int id, int g, int y, int r)
 {
   _portG = g;
-  pinMode(_portG, OUTPUT);
+  pinMode(g, OUTPUT);
   _portY = y;
-  pinMode(_portY, OUTPUT);
+  pinMode(y, OUTPUT);
   _portR = r;
-  pinMode(_portR, OUTPUT);
+  pinMode(r, OUTPUT);
 
   _id = id;
+  
+  this->statusUpdate('O');
 }
 
 int TrafficLight::getId() 
@@ -49,6 +51,8 @@ void TrafficLight::turnOff()
   digitalWrite(_portG, LOW);
   digitalWrite(_portY, LOW);
   digitalWrite(_portR, LOW);
+  
+  this->statusUpdate('O');
 }  
 
 void TrafficLight::testLight()
