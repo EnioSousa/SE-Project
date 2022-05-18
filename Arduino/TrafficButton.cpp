@@ -18,7 +18,7 @@ int TrafficButton::getId()
 bool TrafficButton::isPressed()
 {
   bool pressed = digitalRead(_inPort) == HIGH;
-
+  
   if ( pressed && !_prevPressed )
   {
     _prevPressed = true;

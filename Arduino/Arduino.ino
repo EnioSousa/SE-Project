@@ -35,7 +35,7 @@ void setup() {
   tl[2] = new TrafficLight(2, 35, 36, 37);
 
   // Initiate the breadBoard button 0
-  tb[0] = new TrafficButton(0, 13);
+  tb[0] = new TrafficButton(0, 13); // 13
   pb[0] = new PedestrianButton(0, 12);
   
   // Initiate the breadBoard button 0
@@ -47,20 +47,38 @@ void setup() {
 }
 
 void loop() {  
+  // Comenta a proxima linha para ignorar input dos botões
   checkButtons();
+  // Descomenta a proxima linha se quiseres testar a luzes e/ou ter mensagens
+  // test();
 }
 
 void checkButtons()
 {
-  for( int i=0; i<3; i++ ) 
+  for( int i=0; i<3; i++ ) // 3
   {
     tb[i]->isPressed();
   }
 
-  for( int i=1; i<2; i++) 
+  for( int i=0; i<2; i++) //2 
   {
     pb[i]->isPressed();
   }
+}
+
+void test() {
+  tl[0]->testLight();
+  wl[0]->testLight();
+  pl[0]->testLight();
+
+  
+  tl[1]->testLight();
+  wl[1]->testLight();
+  pl[1]->testLight();
+
+  
+  tl[2]->testLight();
+  wl[2]->testLight();
 }
 
 void serialEvent() {
