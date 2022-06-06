@@ -12,6 +12,8 @@ For the implementation of the system we use 3 different systems: Arduino, Raspbe
 
 # Project Structure 
 - The Arduino directory contains all the code necessary to run the Arduino. For this project its advised that we use the  [Arduino IDE](https://www.arduino.cc/en/software) for the compilation of the Arduino code. 
+- The Pi directory contains all the logic nedeed for this simulation.
+- The Application folder contains the android application
 
 # How to run the project 
 
