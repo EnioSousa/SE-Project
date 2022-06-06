@@ -23,6 +23,7 @@ Once the Arduino is connected to the raspberrypi the android application should 
 
 ## SSH Information
  **run:** ssh pi@raspberrypi.local
+ 
  **pass:** root
 
 # Other considerations
