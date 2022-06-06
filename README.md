@@ -10,7 +10,20 @@ For the implementation of the system we use 3 different systems: Arduino, Raspbe
 - The system should detect congestion (more than 10 cars stopped at a light) in less than 2 sec
 - Queues with 10 or more cars should not have the red light on for more than 10 sec
 
+# Project Structure 
+- The Arduino directory contains all the code necessary to run the Arduino. For this project its advised that we use the  [Arduino IDE](https://www.arduino.cc/en/software) for the compilation of the Arduino code. 
+
 # How to run the project 
+
+To run the project, we will need to first compile it, and then connect the computer running the [Arduino IDE](https://www.arduino.cc/en/software) with the Arduino, though a serial port. After the necessary configurations are done, i.e. choose the correct Arduino model, in our case the Arduino MEGA, we need to send the binary code to the Arduino.
+
+After the binary is in the Arduino, we can connect it with the raspbery pi. A power source is advised if the rasperry pi doesn't have the capability to compile the source code of the arduino, otherwise, once we disconect the serial port, the Arduino will suffer a reset and the compiled code will be lost.
+
+TODO: Raspberry pi
+TODO: Android 
+
+# Other considerations
+ For more detailed information about the project development and structure, see (TODO Put ref for the pdf project)
 
 # Developed by:
 
