@@ -29,7 +29,7 @@ Once the Arduino is connected to the raspberrypi the android application should 
  **pass:** root
 
 # Other considerations
- For more detailed information about the project development and structure, see SE-Final Report.pdf
+ For more detailed information about the project development and structure, see SE_Final_Report.pdf
 
 # Developed by:
 
