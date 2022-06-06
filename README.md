@@ -19,8 +19,11 @@ To run the project, we will need to first compile it, and then connect the compu
 
 After the binary is in the Arduino, we can connect it with the raspbery pi. A power source is advised if the rasperry pi doesn't have the capability to compile the source code of the arduino, otherwise, once we disconect the serial port, the Arduino will suffer a reset and the compiled code will be lost.
 
-TODO: Raspberry pi
-TODO: Android 
+Once the Arduino is connected to the raspberrypi the android application should be initiaded either using a android emulator or with a USB communication with a physical device. If the emulator route is chosen, it requires a android image that can be downloaded throw the android studio IDE. It is also requiered that in the BIOS settings virtualization is enabled. Then we need to run the java code in the pi. To run the java code the run.sh script is all thats required be run as long as a ssh connection to the raspberry pi has been established. At this point we wait some seconds to garantee that all conections are established and we can start interacting with the system. 
+
+## SSH Information
+ **run:** ssh pi@raspberrypi.local
+ **pass:** root
 
 # Other considerations
  For more detailed information about the project development and structure, see (TODO Put ref for the pdf project)
